@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load markdown_filters %}
+
+{% for product in products1 %}
+
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #a30ed5dc;
+  }
+
+  .header-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 70vh;
+}
+
+.text-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4d185fdc; /* Optional: Set a background color */
+  background-image: url("https://marketplace.canva.com/NW2HU/MAEH2PNW2HU/1/s2/canva-untitled-MAEH2PNW2HU.jpg");
+  background-size: cover; /* Makes sure the image covers the entire container */
+  background-position: center; /* Centers the image in the container */
+  background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+  height: 70vh; /* Optional: Ensure the column takes up the full viewport height */
+  color: white; /* Ensure text color is appropriate against the background image */
+}
+
+
+.text-column2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4d185fdc; /* Optional: Set a background color */
+  background-image: url("{{ product.image1.url }}");
+  background-size: cover; /* Makes sure the image covers the entire container */
+  background-position: center; /* Centers the image in the container */
+  background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+  height: 70vh; /* Optional: Ensure the column takes up the full viewport height */
+  color: white; /* Ensure text color is appropriate against the background image */
+}
+
+
+
+  .card {
+      background-color: #4d185fdc;
+  }
+
+  
+
+  h2, h1, h4 {
+      margin-bottom: 10px;
+  }
+
+</style>
+
+
+    
+
+    <header class="header-grid">
+      <!-- Column 1: Text Content -->
+      <div class="text-column">
+          <div class="container px-4 px-lg-5 my-5">
+              <div class="text-center text-white">
+                  <h1 class="display-4 fw-bolder">DATA CLUB CENTER</h1>
+                  
+                  <h1>{{ product.category }}</h1>
+              </div>
+          </div>
+      </div>
+      <!-- Image Gallery -->
+      <div class="text-column2">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                
+                <h1>{{ product.title }}</h1>
+            </div>
+        </div>
+    </div>
+    </header>
+        
+        <div>
+            {{ product.content|safe }}
+        </div>
+    {% endfor %}
+
+{% endblock %}

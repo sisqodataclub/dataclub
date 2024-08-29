@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Header -->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Personal Branding...</h1>
+            <p class="lead fw-normal text-white-50 mb-0">DERRICK CUSTOM DESIGNS (DCD): Empower Your Style with Personal Branding</p>
+            <a href="{% url 'home' %}" class="btn btn-outline-light mt-3">Discover more items</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <br/><br/>
+        
+            <p class="lead fw-normal text-dark mb-4" style="text-align: justify; color: #444; font-size: 18px;">
+                Elevate your style with DCD! Personal branding is an art – a way to express your identity. Whether you're an individual showcasing your uniqueness or a business making a lasting impression, DCD is your canvas for exclusive clothing designs that resonate with your essence.
+            </p>
+            <div class="lead fw-normal text-primary mb-4" style="text-align: center; color: #e44d26; font-size: 24px;">
+                Unveiling the Process:
+            </div>
+            <ul class="lead fw-normal text-dark mb-4" style="text-align: justify; list-style-type: none; margin-left: 0; font-size: 18px;">
+                <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                    <span style="display: inline-block; width: 10px; height: 10px; background-color: #e44d26; border-radius: 50%; position: absolute; left: -20px; top: 5px;"></span>
+                    Choose from our curated collection of clothing items.
+                </li>
+                <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                    <span style="display: inline-block; width: 10px; height: 10px; background-color: #e44d26; border-radius: 50%; position: absolute; left: -20px; top: 5px;"></span>
+                    Select the quantity – single piece or bulk order, we've got you covered.
+                </li>
+                <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                    <span style="display: inline-block; width: 10px; height: 10px; background-color: #e44d26; border-radius: 50%; position: absolute; left: -20px; top: 5px;"></span>
+                    Personalize with your logo, slogan, or any design that defines your brand.
+                </li>
+                <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                    <span style="display: inline-block; width: 10px; height: 10px; background-color: #e44d26; border-radius: 50%; position: absolute; left: -20px; top: 5px;"></span>
+                    Submit your request, and our skilled team will breathe life into your vision.
+                </li>
+            </ul>
+            <br/><br/>
+        </div>
+        <br><br><br><br>
+        <div class="col-4" style="background-color: #b2cce6; padding: 20px; border-radius: 10px;">
+            <!-- Your form goes here -->
+            <form id="myForm" method="post" enctype="multipart/form-data" action="{% url 'create_cproduct' %}">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_p }}
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </div>
+            </form>
+        
+        </div>
+    </div>
+</div>
+
+{% endblock %}

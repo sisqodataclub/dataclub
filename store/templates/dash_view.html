@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!-- Container for Dash app -->
+<div>
+    {% load plotly_dash %}
+    {% plotly_app 'dash_dashboard' ratio=1 %}
+</div>
+
+<!-- Add any other content or structure for your Django template -->
+
+{% endblock %}

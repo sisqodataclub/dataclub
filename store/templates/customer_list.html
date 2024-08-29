@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Header-->
+<header class="bg-dark py-5">
+
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bold">🛒 Track Your Orders</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Discover your favorite items in a world of possibilities.</p>
+            <a href="{% url 'home' %}" class="btn btn-outline-light mt-3">Discover more items</a>
+        </div>
+    </div>
+</header>
+
+
+<div class="container">
+<br/>
+
+
+<div class="card mb-3" style="border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <div class="row g-0">
+      <div class="col-md-6">
+        <div class="card-body">
+          <center>
+            <h5 class="card-title" style="color: #333; font-size: 24px; margin-bottom: 10px;">{{ order.first_name }}</h5>
+            <br/>
+            <p class="card-text" style="color: #555; font-size: 16px;"><strong>Customer:</strong> {{ order.customer }}</p>
+            <p class="card-text" style="color: #555; font-size: 16px;"><strong>Purchase Date:</strong> {{ order.date }}</p>
+            <p class="card-text" style="color: #555; font-size: 16px;"><strong>Product:</strong> {{ order.product }}</p>
+            <p class="card-text" style="color: #555; font-size: 16px;"><strong>Quantity:</strong> {{ order.quantity }}</p>
+            <p class="card-text" style="color: #555; font-size: 16px;"><strong>Address:</strong> {{ order.address }}</p>
+          </center>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <center>
+            <br></br>
+            
+            <p class="card-text" style="color: #555; font-size: 16px;"><strong>Postcode:</strong> {{ order.postcode }}</p>
+            <p class="card-text" style="color: #555; font-size: 16px;"><strong>Delivery Status:</strong> {{ order.delivery_status }}</p>
+            <p class="card-text" style="color: #555; font-size: 16px;"><strong>Delivery Company:</strong> {{ order.delivery_company }}</p>
+            <p class="card-text" style="color: #555; font-size: 16px;"><strong>Tracking ID:</strong> {{ order.tracking_id }}</p>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        	
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+
+
+
+{% endblock %}

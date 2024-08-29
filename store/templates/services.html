@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    .card-body {
+        background-color: #e6f2ff; /* Light blue background */
+        border: 1px solid #0056b3; /* Dark blue border */
+        color: #0056b3; /* Dark blue text */
+    }
+
+    .card-title {
+        color: #003366; /* Darker blue for the title */
+    }
+
+    .card-text {
+        list-style: none; /* Remove default bullet points */
+        padding-left: 0; /* Remove left padding */
+    }
+
+    .card-text li {
+        color: #800031; /* Color for bullet points */
+        margin-left: 1em; /* Add left margin for text alignment */
+    }
+
+    .card-text li::before {
+        content: "\279C"; /* Arrow bullet point character */
+        color: #b34800c5; /* Initial color for bullet points */
+        display: inline-block; 
+        font-size: 1.5em; /* Adjust bullet point size */
+        width: 1em;
+        margin-left: -1.5em; /* Adjust to align with text */
+        animation: bullet-color-change 2s infinite;
+    }
+
+    @keyframes bullet-color-change {
+        0% { color: #0fc579; } /* Initial color */
+        50% { color: #66001a; } /* Midway color */
+        100% { color: #0056b3; } /* Final color */
+    }
+
+    .sticky-top {
+        top: 20px; /* Add some space from the top when sticky */
+    }
+
+    .bg-dark {
+        background-color: #003366 !important; /* Dark blue background for header */
+    }
+
+    .text-white-50 {
+        color: rgba(255, 255, 255, 0.7) !important; /* Slightly transparent white text */
+    }
+</style>
+
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">OUR SERVICES</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Choose Your Category Below...</p>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            <div class="card mt-5 sticky-top">
+                <div class="card-body">
+                    <h4 class="card-title">Sidebar</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#service1">Service 1</a></li>
+                        <li><a href="#service2">Service 2</a></li>
+                        <li><a href="#service3">Service 3</a></li>
+                        <li><a href="#service4">Service 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Main content -->
+        <div class="col-md-9">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h3 id="service1" class="card-title mt-4">Data Analytics and Reporting</h3>
+                    <ul class="card-text">
+                        <li>Designing and implementing data collection processes.</li>
+                        <li>Ensuring data accuracy and integrity through rigorous validation techniques.</li>
+                        <li>Employing statistical methods and analytical tools to uncover trends, patterns, and correlations within data sets.</li>
+                        <li>Conducting descriptive, predictive, and prescriptive analyses to forecast future trends and outcomes.</li>
+                        <li>Creating clear, concise, and visually appealing reports and dashboards using tools such as Tableau, Power BI, or custom solutions.</li>
+                        <li>Communicating complex analytical findings in an understandable and actionable manner to stakeholders at all levels of the organization.</li>
+                        <li>Collaborating with clients to understand their business challenges and objectives.</li>
+                        <li>Providing strategic recommendations based on data insights to improve business performance and drive growth.</li>
+                        <li>Proficiency in programming languages such as SQL, Python, or R for data manipulation and analysis.</li>
+                        <li>Expertise in database management systems and data warehousing solutions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h3 id="service2" class="card-title mt-4">Data Management Solutions</h3>
+                    <ul class="card-text">
+                        <li>Designing and implementing data collection processes.</li>
+                        <li>Ensuring data accuracy and integrity through rigorous validation techniques.</li>
+                        <li>Employing statistical methods and analytical tools to uncover trends, patterns, and correlations within data sets.</li>
+                        <li>Conducting descriptive, predictive, and prescriptive analyses to forecast future trends and outcomes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h3 id="service3" class="card-title mt-4">WEBSITE DESIGN AND MAINTENANCE </h3>
+                    <ul class="card-text">
+                        <li>Designing and implementing data collection processes.</li>
+                        <li>Ensuring data accuracy and integrity through rigorous validation techniques.</li>
+                        <li>Employing statistical methods and analytical tools to uncover trends, patterns, and correlations within data sets.</li>
+                        <li>Conducting descriptive, predictive, and prescriptive analyses to forecast future trends and outcomes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h3 id="service4" class="card-title mt-4">Market Research </h3>
+                    <ul class="card-text">
+                        <li>Designing and implementing data collection processes.</li>
+                        <li>Ensuring data accuracy and integrity through rigorous validation techniques.</li>
+                        <li>Employing statistical methods and analytical tools to uncover trends, patterns, and correlations within data sets.</li>
+                        <li>Conducting descriptive, predictive, and prescriptive analyses to forecast future trends and outcomes.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Additional service sections would go here -->
+    </div>
+</div>
+
+{% endblock %}

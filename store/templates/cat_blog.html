@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #a30ed5dc;
+    color: rgb(255, 255, 255);
+}
+
+    
+
+    .header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+.text-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4d185fdc; /* Optional: Set a background color */
+    background-image: url("https://marketplace.canva.com/NW2HU/MAEH2PNW2HU/1/s2/canva-untitled-MAEH2PNW2HU.jpg");
+    background-size: cover; /* Makes sure the image covers the entire container */
+    background-position: center; /* Centers the image in the container */
+    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+    height: 100vh; /* Optional: Ensure the column takes up the full viewport height */
+    color: white; /* Ensure text color is appropriate against the background image */
+}
+
+    .card {
+        background-color: #4d185fdc;
+    }
+
+    
+
+    .carousel-container {
+        max-width: 100%;
+        overflow: hidden;
+        position: relative;
+        height: 100vh;
+    }
+
+    .carousel-item {
+        height: 100vh;
+        position: relative;
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        color: white;
+        text-align: center;
+    }
+
+    .line {
+        width: 100px;
+        height: 5px;
+        background-color: white;
+        margin: 0 auto 20px auto;
+    }
+
+    h2, h1, h4, a {
+        margin-bottom: 10px;
+        color: white;
+    }
+
+    header .item .cover .header-content {
+        padding: 56px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    header .item .cover .header-content .line {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        border: 9px solid #fff;
+        clip-path: polygon(0 0, 60% 0, 36% 100%, 0 100%);
+    }
+
+    header .item .cover .header-content h2 {
+        font-weight: 300;
+        font-size: 35px;
+        color: #fff;
+    }
+
+    header .item .cover .header-content h1 {
+        font-size: 56px;
+        font-weight: 600;
+        margin: 5px 0 20px;
+        word-spacing: 3px;
+        color: #fff;
+    }
+
+    header .item .cover .header-content h4 {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 36px;
+        color: #fff;
+    }
+
+    .header1{
+        background-image: url("https://marketplace.canva.com/NW2HU/MAEH2PNW2HU/1/s2/canva-untitled-MAEH2PNW2HU.jpg");
+        background-size: cover; /* Makes sure the image covers the entire container */
+        background-position: center; /* Centers the image in the container */
+        background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+
+    }
+</style>
+
+
+<!-- Header-->
+<!-- Header-->
+<header class="header1 bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Blog Posts</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Choose Your Category Below...</p>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <br/><br/>
+                {% for category in categories %}
+                    <h3>
+                        <a href="{% url 'category' category %}" class="text-decoration-none">
+                            {{ category }}
+                        </a>
+                    </h3>
+                {% endfor %}
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

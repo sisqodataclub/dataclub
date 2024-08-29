@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<br>
+<style>
+    .carousel-container {
+        max-width: 100%;
+        overflow: hidden;
+        position: relative;
+        height: 50vh;
+    }
+
+    .carousel-item {
+        height: 50vh;
+        position: relative;
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: 70%;
+        object-fit: cover;
+    }
+</style>
+
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <div id="imageSlider" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ product.image.url }}" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ product.image1.url }}" class="d-block w-100" alt="Image 2">
+            </div>
+            <!-- Add more carousel items for additional images if needed -->
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#imageSlider"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#imageSlider"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+      </div>    
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <center>
+        
+        <h5 class="card-title">{{ product.name }}</h5>
+        </center>
+        <br/>
+        <p class="card-text" style="text-align: right;">
+            <ul>
+                {% for point in product.services.splitlines %}
+                    <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+        </p>
+    </div>
+    </div>
+    
+    <button type="button" value="{{ product.id }}" class="btn btn-secondary" id="add-cart">Add To Enquiry Basket</button>
+    <a href="{% url 'cart_summary' %}" class="btn btn-secondary">Enquiry Basket</a>
+</div>
+        
+        
+
+<br/><br/>
+
+<script>
+// Check if button pressed
+$(document).on('click', '#add-cart', function(e){
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: '{% url 'cart_add' %}',
+        data: {
+    product_id: $('#add-cart').val(),
+    product_qty: 1,
+    // product_qty: $('#qty-cart option:selected').text(), 
+    csrfmiddlewaretoken: '{{ csrf_token }}',
+    action: 'post'
+        },
+
+        success: function(json){
+            //console.log(json)
+            document.getElementById("cart_quantity").textContent = json.qty
+            location.reload();
+        },
+
+        error: function(xhr, errmsg, err){
+
+        }
+
+
+    });
+
+
+
+})
+
+</script>
+
+
+{% endblock %}

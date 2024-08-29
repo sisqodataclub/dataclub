@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    /* Container */
+    .shipping-form-container {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    /* Card Styling */
+    .shipping-card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+    }
+
+    .shipping-card-header {
+        background-color: #007bff;
+        color: #fff;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        padding: 20px 15px;
+        font-size: 1.5rem;
+    }
+
+    /* Card Body */
+    .shipping-card-body {
+        padding: 30px;
+    }
+
+    /* Form Styling */
+    .shipping-card-body form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .shipping-card-body .form-group {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .shipping-card-body label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .shipping-card-body input, 
+    .shipping-card-body textarea, 
+    .shipping-card-body select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    /* Button Styling */
+    .btn-primary {
+        background-color: #28a745;
+        border: none;
+        padding: 10px 30px;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #218838;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .shipping-form-container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .shipping-card-header {
+            font-size: 1.2rem;
+        }
+
+        .btn-primary {
+            font-size: 1rem;
+            padding: 8px 20px;
+        }
+    }
+</style>
+
+<div class="container shipping-form-container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shipping-card">
+                <div class="card-header shipping-card-header">
+                    <h2 class="text-center">Insert Contact Details</h2>
+                </div>
+                <div class="card-body shipping-card-body">
+                    <form method="post" action="{% url 'enquiry' %}">
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        <div class="form-group">
+                            {{ form.name.label_tag }}
+                            {{ form.name }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.email.label_tag }}
+                            {{ form.email }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.description.label_tag }}
+                            {{ form.description }}
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Submit Enquiry</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

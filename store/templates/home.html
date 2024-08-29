@@ -1,0 +1,300 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="page">
+
+<header class="header-grid">
+    <!-- Column 1: Text Content -->
+    <div class="text-column">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">DATA CLUB CENTER</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Data solutions for small businesses</p>
+            </div>
+        </div>
+    </div>
+    <!-- Image Gallery -->
+    <div id="imageGallery" class="carousel slide carousel-vertical" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <!-- Carousel Item 1 -->
+            <div class="carousel-item active">
+                <img src="https://marketplace.canva.com/MADmjDRfv-M/1/screen_2x/canva-untitled-MADmjDRfv-M.jpg" alt="">
+                <div class="cover">
+                    <div class="container">
+                        <div class="line"></div>
+                        
+                        <h4>We provide tailored data solutions that help small businesses thrive in a competitive market.</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel Item 2 -->
+            <div class="carousel-item">
+                <img src="https://t4.ftcdn.net/jpg/04/35/31/47/360_F_435314769_TXsKQ6aQfoHMZJfGcXtaXhyoY7iHK3ld.jpg" alt="">
+                <div class="cover">
+                    <div class="container">
+                        <div class="line"></div>
+                        <ul>
+                        <h4>Data Analytics and Reporting</h4>
+                        <h4>Data Management Solutions</h4>
+                        <h4>Website Development</h4>
+                        <h4>Market Research</h4>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more carousel items as needed -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#imageGallery" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#imageGallery" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</header>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #a30ed5dc;
+    }
+
+    
+
+    .header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+.text-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4d185fdc; /* Optional: Set a background color */
+    background-image: url("https://marketplace.canva.com/NW2HU/MAEH2PNW2HU/1/s2/canva-untitled-MAEH2PNW2HU.jpg");
+    background-size: cover; /* Makes sure the image covers the entire container */
+    background-position: center; /* Centers the image in the container */
+    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+    height: 100vh; /* Optional: Ensure the column takes up the full viewport height */
+    color: white; /* Ensure text color is appropriate against the background image */
+}
+
+    .card {
+        background-color: #4d185fdc;
+    }
+
+    
+
+    .carousel-container {
+        max-width: 100%;
+        overflow: hidden;
+        position: relative;
+        height: 100vh;
+    }
+
+    .carousel-item {
+        height: 100vh;
+        position: relative;
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        color: white;
+        text-align: center;
+    }
+
+    .line {
+        width: 100px;
+        height: 5px;
+        background-color: white;
+        margin: 0 auto 20px auto;
+    }
+
+    h2, h1, h4 {
+        margin-bottom: 10px;
+    }
+
+    header .item .cover .header-content {
+        padding: 56px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    header .item .cover .header-content .line {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        border: 9px solid #fff;
+        clip-path: polygon(0 0, 60% 0, 36% 100%, 0 100%);
+    }
+
+    header .item .cover .header-content h2 {
+        font-weight: 300;
+        font-size: 35px;
+        color: #fff;
+    }
+
+    header .item .cover .header-content h1 {
+        font-size: 56px;
+        font-weight: 600;
+        margin: 5px 0 20px;
+        word-spacing: 3px;
+        color: #fff;
+    }
+
+    header .item .cover .header-content h4 {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 36px;
+        color: #fff;
+    }
+</style>
+
+
+
+
+<!-- Section -->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-black">
+            <h1 class="display-4 fw-bolder text-white">WHAT WE DO</h1>
+            <p class="lead fw-normal text-white-50 mb-0">
+                Our mission is to empower small and medium-sized businesses to harness the power of their data. We specialize in providing comprehensive data management and analytics solutions that transform raw data into actionable insights. By leveraging cutting-edge technology and industry best practices, we help our clients make informed decisions, optimize their operations, and achieve their strategic goals. Our commitment is to deliver high-quality, tailored services that drive success and foster sustainable growth for our clients.
+            </p>
+        </div>
+    </div>
+
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-black">
+            <h1 class="display-4 fw-bolder text-white">OUR SERVICES</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Browse our services and get in touch.</p>
+        </div>
+    </div>
+
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for product in products %}
+            <div class="col mb-5">
+                <div class="card h-100">
+                    {% if product.is_sale %}
+                    <!-- Sale badge -->
+                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                    {% endif %}
+                    <!-- Product image -->
+                    <img class="card-img-top" src="{{ product.image.url }}" alt="Product Image" />
+                    <!-- Product details -->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name -->
+                            <h5 class="fw-bolder">{{ product.name }}</h5>
+                            {% if product.is_sale %}
+                            <!-- Sale price -->
+                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                <div class="bi-star-fill"></div>
+                                &nbsp;&nbsp;Sale!&nbsp;&nbsp;
+                                <div class="bi-star-fill"></div>
+                            </div>
+                            <strike>£{{ product.price }}</strike> &nbsp; £{{ product.sale_price }}
+                            {% else %}
+                            <!-- Product price -->
+                           
+                            {% endif %}
+                        </div>
+                    </div>
+                    <!-- Product actions -->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent text-white">
+                        <div class="text-center">
+                            <a class="btn btn-outline-dark mt-auto" href="{% url 'product' product.id %}" style="color: white;">
+                                Read more...
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<div class="container px-4 px-lg-5 my-5">
+    <div class="text-center text-black">
+        <h1 class="display-4 fw-boldern text-white">Blog Posts</h1>
+        <p class="lead fw-normal text-white-50 mb-0">Read about our recent posts.</p>
+    </div>
+</div>
+
+<section>
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for blog in products1 %}
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product details -->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name -->
+                            <h5 class="fw-bolder">{{ blog.title }}</h5>
+                        </div>
+                    </div>
+                    <!-- Product actions -->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center">
+                            <a class="btn btn-outline-dark mt-auto" href="{% url 'blog' blog.id %}" style="color: white;">Read More...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<div class="text-center">
+    <a class="button lp4 primary" style="padding: 0.8rem 4rem;
+        background: #fefffd;
+        text-transform: uppercase;
+        color: rgb(7, 7, 6);
+        border: 2px solid rgb(235, 24, 24);
+        font-size: 20px;
+        font-weight: 1000;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        display: inline-block;
+        margin-top: 10px;" href="{% url 'category_summary' %}">Read More...</a>
+</div>
+
+{% endblock %}
+
+</div>

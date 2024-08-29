@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">DERRICK CUSTOM DESIGNS (DCD)</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Every piece tells a unique story</p>
+            </div>
+        </div>
+    </header>
+    <!-- Section-->
+    <section class="py-5">
+
+        <div class="container px-4 px-lg-5 mt-5">
+
+            <!-- Input field with a predefined value of 0 -->
+            <div class="mb-3">
+                <label for="orderInput" class="form-label">Enter Order ID:</label>
+                <input type="number" class="form-control" id="orderInput" placeholder="Order ID" value="0">
+            </div>
+
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+                <!-- Product actions-->
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center">
+                        <a class="btn btn-outline-dark mt-auto" id="viewOrderBtn" href="#">View Order</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript to update the "View Order" link based on the input value
+        document.getElementById('orderInput').addEventListener('input', function () {
+            var orderInputValue = document.getElementById('orderInput').value;
+            var viewOrderLink = document.getElementById('viewOrderBtn');
+            viewOrderLink.href = "/order/" + orderInputValue + "/";
+        });
+    </script>
+
+{% endblock %}
